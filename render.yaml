@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: poker-with-friends
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        value: postgresql://real_estate_db_osz6_user:0kFF0DPxXD9fJ9q5DNJySdmUBtkWHvBS@dpg-d02b4hje5dus73bjo250-a.frankfurt-postgres.render.com/real_estate_db_osz6
+      - key: JWT_SECRET
+        generateValue: true
+      - key: NODE_ENV
+        value: production
+
